@@ -1,0 +1,82 @@
+Last login: Thu Mar  4 20:54:00 on ttys000
+songshuang@SS-Mac ~ % nano ./.zshrc
+songshuang@SS-Mac ~ % cd /usr/lib/
+songshuang@SS-Mac lib % ls -lh lib{crypto, ssl}*
+zsh: no matches found: ssl}*
+songshuang@SS-Mac lib % ls -lh lib{crypto,ssl}* 
+-rwxr-xr-x  1 root  wheel   1.0M Sep 22 08:29 libcrypto.0.9.7.dylib
+-rwxr-xr-x  1 root  wheel   1.3M Sep 22 08:29 libcrypto.0.9.8.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.35.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.41.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.42.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.44.dylib
+-rwxr-xr-x  1 root  wheel    32K Sep 22 08:29 libcrypto.dylib
+-rwxr-xr-x  1 root  wheel   207K Sep 22 08:29 libssl.0.9.7.dylib
+-rwxr-xr-x  1 root  wheel   328K Sep 22 08:30 libssl.0.9.8.dylib
+-rwxr-xr-x  1 root  wheel   323K Sep 22 08:28 libssl.35.dylib
+-rwxr-xr-x  1 root  wheel   307K Sep 22 08:29 libssl.43.dylib
+-rwxr-xr-x  1 root  wheel   293K Sep 22 08:29 libssl.44.dylib
+-rwxr-xr-x  1 root  wheel   287K Sep 22 08:29 libssl.46.dylib
+-rwxr-xr-x  1 root  wheel    32K Sep 22 08:29 libssl.dylib
+songshuang@SS-Mac lib % brew list openssl | grep lib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libcrypto.a
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/pkgconfig/openssl.pc
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/pkgconfig/libssl.pc
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/pkgconfig/libcrypto.pc
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/.DS_Store
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libssl.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libssl.1.1.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libcrypto.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libssl.a
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/engines-1.1/padlock.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/engines-1.1/capi.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/lib/libcrypto.1.1.dylib
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/man/man3/ERR_get_next_error_library.3ssl
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/man/man3/ERR_lib_error_string.3ssl
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/man/man3/SSL_library_init.3ssl
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/doc/openssl/html/man3/SSL_library_init.html
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/doc/openssl/html/man3/ERR_lib_error_string.html
+/usr/local/Cellar/openssl@1.1/1.1.1j/share/doc/openssl/html/man3/ERR_get_next_error_library.html
+songshuang@SS-Mac lib % 
+  [Restored 4 Mar 2021 at 23:16:47]
+Last login: Thu Mar  4 23:16:47 on ttys001
+songshuang@SS-Mac lib % sudo mv libssl.dylib libssl.dylib.bak
+Password:
+mv: rename libssl.dylib to libssl.dylib.bak: Read-only file system
+songshuang@SS-Mac lib % mount
+/dev/disk1s1 on / (apfs, local, read-only, journaled)
+devfs on /dev (devfs, local, nobrowse)
+/dev/disk1s2 on /System/Volumes/Data (apfs, local, journaled, nobrowse)
+/dev/disk1s5 on /private/var/vm (apfs, local, journaled, nobrowse)
+map auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)
+/dev/disk2s2 on /Volumes/Timemachine_WD (hfs, local, nodev, nosuid, journaled)
+/dev/disk2s3 on /Volumes/TOSHIBA EXT (exfat, local, nodev, nosuid, noowners)
+keybase-redirector on /Volumes/Keybase (kbfuse, read-only, synchronous, nobrowse)
+kbfs@kbfuse1 on /Volumes/Keybase (songshuang) (kbfuse, nodev, nosuid, synchronous, mounted by songshuang)
+songshuang@SS-Mac lib % sudo mount -r -w /
+songshuang@SS-Mac lib % sudo mv libssl.dylib libssl.dylib.bak
+songshuang@SS-Mac lib % sudo mv libcrypto.dylib libcrypto.dylib.bak
+songshuang@SS-Mac lib % ls -lh lib{crypto,ssl}*
+-rwxr-xr-x  1 root  wheel   1.0M Sep 22 08:29 libcrypto.0.9.7.dylib
+-rwxr-xr-x  1 root  wheel   1.3M Sep 22 08:29 libcrypto.0.9.8.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.35.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.41.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.42.dylib
+-rwxr-xr-x  1 root  wheel   1.4M Sep 22 08:29 libcrypto.44.dylib
+-rwxr-xr-x  1 root  wheel    32K Sep 22 08:29 libcrypto.dylib.bak
+-rwxr-xr-x  1 root  wheel   207K Sep 22 08:29 libssl.0.9.7.dylib
+-rwxr-xr-x  1 root  wheel   328K Sep 22 08:30 libssl.0.9.8.dylib
+-rwxr-xr-x  1 root  wheel   323K Sep 22 08:28 libssl.35.dylib
+-rwxr-xr-x  1 root  wheel   307K Sep 22 08:29 libssl.43.dylib
+-rwxr-xr-x  1 root  wheel   293K Sep 22 08:29 libssl.44.dylib
+-rwxr-xr-x  1 root  wheel   287K Sep 22 08:29 libssl.46.dylib
+-rwxr-xr-x  1 root  wheel    32K Sep 22 08:29 libssl.dylib.bak
+songshuang@SS-Mac lib % sudo cp /usr/local/Cellar/openssl@1.1/1.1.1j/lib/libcrypto.1.1.dylib ./
+songshuang@SS-Mac lib % sudo cp /usr/local/Cellar/openssl@1.1/1.1.1j/lib/libssl.1.1.dylib ./
+songshuang@SS-Mac lib % sudo ln -s libssl.1.1.dylib libssl.dylib
+Password:
+songshuang@SS-Mac lib % sudo ln -s libcrypto.1.1.dylib libcrypto.dylib
+songshuang@SS-Mac lib % 
+  [Restored 4 Mar 2021 at 23:40:33]
+Last login: Thu Mar  4 23:40:33 on ttys002
+songshuang@SS-Mac lib % 
